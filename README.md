@@ -15,12 +15,6 @@ https://github.com/omayconaguiar/TalkMoreFrontend
 yarn install
 ```
 
-### Docker - Subir banco de dados localmente
-
-```js
-docker-compose up db
-```
-
 ### Migrations
 
 ```js

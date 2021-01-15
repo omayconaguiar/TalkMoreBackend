@@ -1,5 +1,3 @@
-/* eslint max-len: ["error", { "code": 150 }] */
-
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
 
@@ -7,32 +5,31 @@ module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
-  // Stop running tests after the first failure
-  // bail: false,
+  // Stop running tests after `n` failures
+  bail: true,
 
   // Respect "browser" field in package.json when resolving modules
   // browser: false,
 
   // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "/tmp/jest_rs",
+  // cacheDirectory: "/private/var/folders/m7/3yjbp5ds77xb33vt96mwlwq00000gn/T/jest_dx",
 
   // Automatically clear mock calls and instances between every test
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: false,
+  // collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: null,
+  // collectCoverageFrom: ["src/**"],
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: 'coverage',
+  // coverageDirectory: "__tests__/coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: [
-    '/node_modules/',
-    'knexfile.ts',
-  ],
+  // coveragePathIgnorePatterns: [
+  //   "/node_modules/"
+  // ],
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -45,6 +42,9 @@ module.exports = {
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: null,
 
+  // A path to a custom dependency extractor
+  // dependencyExtractor: null,
+
   // Make calling deprecated APIs throw helpful error messages
   // errorOnDeprecated: false,
 
@@ -55,7 +55,7 @@ module.exports = {
   // globalSetup: null,
 
   // A path to a module which exports an async function that is triggered once after all test suites
-  // globalTeardown: './src/config/jest/teardown.js',
+  // globalTeardown: null,
 
   // A set of global variables that need to be available in all test environments
   // globals: {},
@@ -66,7 +66,14 @@ module.exports = {
   // ],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node', 'd.ts'],
+  // moduleFileExtensions: [
+  //   "js",
+  //   "json",
+  //   "jsx",
+  //   "ts",
+  //   "tsx",
+  //   "node"
+  // ],
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   // moduleNameMapper: {},
@@ -78,7 +85,7 @@ module.exports = {
   // notify: false,
 
   // An enum that specifies notification mode. Requires { notify: true }
-  // notifyMode: "always",
+  // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
   // preset: null,
@@ -105,9 +112,9 @@ module.exports = {
   // rootDir: null,
 
   // A list of paths to directories that Jest should use to search for files in
-  roots: [
-    '<rootDir>/src',
-  ],
+  // roots: [
+  //   "<rootDir>"
+  // ],
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
@@ -115,14 +122,14 @@ module.exports = {
   // The paths to modules that run some code to configure or set up the testing environment before each test
   // setupFiles: [],
 
-  // The path to a module that runs some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: ['./configs/jest.config.ts'],
+  // A list of paths to modules that run some code to configure or set up the testing framework before each test
+  // setupFilesAfterEnv: [],
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  testEnvironment: 'node',
+  testEnvironment: "node",
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -131,20 +138,15 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.js?(x)",
-  //   "**/?(*.)+(spec|test).js?(x)"
-  // ],
+  testMatch: ["**/__tests__/**/*.test.ts?(x)"]
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  testPathIgnorePatterns: [
-    '/node_modules/',
-    'dist',
-    'src/util/test.ts'
-  ],
+  // testPathIgnorePatterns: [
+  //   "/node_modules/"
+  // ],
 
-  // The regexp pattern Jest uses to detect test files
-  // testRegex: "",
+  // The regexp pattern or array of patterns that Jest uses to detect test files
+  // testRegex: [],
 
   // This option allows the use of a custom results processor
   // testResultsProcessor: null,
@@ -159,7 +161,7 @@ module.exports = {
   // timers: "real",
 
   // A map from regular expressions to paths to transformers
-  transform: { "\\.ts$": ['ts-jest'] },
+  // transform: null,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

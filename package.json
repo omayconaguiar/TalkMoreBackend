@@ -10,12 +10,13 @@
     "dev": "npm-run-all -p dev:*",
     "dev:services": "nodemon src/app.ts",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
-    "test": "jest \\.test\\.ts",
-    "test:unit": "jest \\.unit\\.test\\.ts --silent",
-    "test:integration": "jest \\.integration\\.test\\.ts"
+    "test": "jest",
+    "knex": "knex migrate:latest",
+    "seed": "yarn knex seed:run"
   },
   "dependencies": {
     "ajv": "6.11.0",
+    "axios": "^0.21.1",
     "bluebird": "3.7.2",
     "cheerio": "1.0.0-rc.3",
     "cors": "2.8.5",
@@ -69,7 +70,9 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "sinon": "^7.3.2",
+    "sqlite3": "^4.0.6",
     "sucrase": "^3.10.1",
+    "supertest": "^3.4.2",
     "ts-jest": "^25.4.0"
   }
 }
